@@ -1,0 +1,82 @@
+﻿@model IEnumerable<TesteSimpress.Models.Produto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ 
+    if (ViewData["Produto"] != null)
+        await Html.RenderPartialAsync("Create", ViewData["Produto"] as Produto);
+    else
+        await Html.RenderPartialAsync("Create", new TesteSimpress.Models.Produto());
+}
+
+@{ 
+    if (TempData["Flash"] != null)
+    { <div class="alert alert-danger">@TempData["Flash"]</div>}
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ativo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Perecivel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categoria)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @{
+                    if (item.Ativo)
+                    {<p>Ativo</p>}
+                    else
+                    {<p>Inativo</p>}
+                }
+            </td>
+            <td>
+                @{
+                    if (item.Perecivel)
+                    {<p>Sim</p>}
+                    else
+                    {<p>Não</p>}
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categoria.Descricao)
+            </td>
+            <td>
+                <a class="btn btn-success" asp-action="Index" asp-route-id="@item.Id">Atualizar</a>
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

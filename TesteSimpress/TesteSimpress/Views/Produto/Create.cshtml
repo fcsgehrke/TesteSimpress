@@ -1,0 +1,31 @@
+﻿@model TesteSimpress.Models.Produto
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+
+        @{ 
+            if (Model.Id <= 0)
+            {
+                <form asp-action="Create">
+                    @{await Html.RenderPartialAsync("_CreateEditPartial");}
+                </form>
+            }
+            else
+            {
+                <form asp-action="Edit">
+                    @{await Html.RenderPartialAsync("_CreateEditPartial");}
+                </form>
+            }
+        }
+        
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
