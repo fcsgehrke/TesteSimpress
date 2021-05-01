@@ -29,7 +29,7 @@ namespace TesteSimpress.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
+            //modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
 
             modelBuilder.Entity<Categoria>(entity =>
             {
@@ -65,8 +65,8 @@ namespace TesteSimpress.Models
                 entity.HasOne(d => d.Categoria)
                     .WithMany(p => p.TblProdutos)
                     .HasForeignKey(d => d.CategoriaId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__tblProdut__Categ__25869641");
+                    .OnDelete(DeleteBehavior.ClientSetNull);
+                    //.HasConstraintName("FK__tblProdut__Categ__25869641");
             });
 
             OnModelCreatingPartial(modelBuilder);

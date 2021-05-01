@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fcgeh\\source\\repos\\TesteSimpress\\TesteSimpress\\TesteSimpress.csproj": {}
+    "C:\\Users\\fcgeh\\source\\repos\\TesteSimpress\\TesteSimpress\\TesteSimpress\\TesteSimpress.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fcgeh\\source\\repos\\TesteSimpress\\TesteSimpress\\TesteSimpress.csproj": {
+    "C:\\Users\\fcgeh\\source\\repos\\TesteSimpress\\TesteSimpress\\TesteSimpress\\TesteSimpress.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fcgeh\\source\\repos\\TesteSimpress\\TesteSimpress\\TesteSimpress.csproj",
+        "projectUniqueName": "C:\\Users\\fcgeh\\source\\repos\\TesteSimpress\\TesteSimpress\\TesteSimpress\\TesteSimpress.csproj",
         "projectName": "TesteSimpress",
-        "projectPath": "C:\\Users\\fcgeh\\source\\repos\\TesteSimpress\\TesteSimpress\\TesteSimpress.csproj",
+        "projectPath": "C:\\Users\\fcgeh\\source\\repos\\TesteSimpress\\TesteSimpress\\TesteSimpress\\TesteSimpress.csproj",
         "packagesPath": "C:\\Users\\fcgeh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fcgeh\\source\\repos\\TesteSimpress\\TesteSimpress\\obj\\",
+        "outputPath": "C:\\Users\\fcgeh\\source\\repos\\TesteSimpress\\TesteSimpress\\TesteSimpress\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -71,6 +71,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[5.0.2, )"
+            },
+            "MySql.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.3, )"
             }
           },
           "imports": [
